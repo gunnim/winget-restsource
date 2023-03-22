@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "aspName": {
+            "type": "string",
+            "metadata": {
+                "description": "ASP Name"
+            }
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "Region location"
+            }
+        },
+        "skuCode": {
+            "type": "string",
+            "metadata": {
+                "description": "SKU Code"
+            },
+            "allowedValues": [
+                "B1",
+                "S1",
+                "P1V2"
+            ],
+            "defaultValue": "B1"
+        },
+        "numberOfWorkers": {
+            "type": "string",
+            "metadata": {
+                "description": "Number of ASP instances"
+            },
+            "defaultValue": 1
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('aspName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "[parameters('skuCode')]",
+                "capacity": "[parameters('numberOfWorkers')]"
+            },
+            "kind": "windows",
+            "properties": {
+                "reserved": false
+            }
+        }
+    ],
+    "outputs": {}
+}

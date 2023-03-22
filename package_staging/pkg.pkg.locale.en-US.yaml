@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultlocale.1.0.0.schema.json
+PackageIdentifier: id.id
+PackageVersion: 1.0
+PackageLocale: en-US
+Publisher: Publisher
+PublisherUrl: https://example.com
+PublisherSupportUrl: https://example.com
+#PrivacyUrl: 
+Author: Author
+PackageName: PackageName
+PackageUrl: https://example.com
+License: MIT
+LicenseUrl: https://example.com
+Copyright: Copyright
+CopyrightUrl: https://example.com
+ShortDescription: Short package description
+Description: Package description
+Moniker: moniker
+Tags:
+  - tag
+ManifestType: defaultLocale
+ManifestVersion: 1.0.0
